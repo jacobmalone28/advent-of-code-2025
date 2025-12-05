@@ -1,3 +1,5 @@
+import subprocess
+
 voltages = []
 
 with open("input") as f:
@@ -13,6 +15,7 @@ with open("input") as f:
         if int(line[-2]) > max2:
             max2 = int(line[-2])
         voltages.append(max1 * 10 + max2)
-        
-print(voltages)
-print(sum(voltages))
+
+answer = str(sum(voltages))
+subprocess.run("pbcopy", text=True, input=answer)
+print(answer, "(copied to clipboard)")

@@ -1,3 +1,4 @@
+import subprocess
 invalid = []
 
 with open("input") as f:
@@ -10,10 +11,11 @@ with open("input") as f:
             s = str(i)
             if len(s) % 2 != 0:
                 continue
-            
+
             middle = len(s) // 2
             if s[:middle] == s[middle:]:
                 invalid.append(i)
 
-print(invalid)
-print(sum(invalid))
+answer = str(sum(invalid))
+subprocess.run("pbcopy", text=True, input=answer)
+print(answer, "(copied to clipboard)")

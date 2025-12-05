@@ -1,3 +1,5 @@
+import subprocess
+
 spot = 50
 count = 0
 
@@ -10,4 +12,6 @@ with open("input") as f:
         if spot == 0:
             count += 1
 
-print(count)
+answer = str(count)
+subprocess.run("pbcopy", text=True, input=answer)
+print(answer, "(copied to clipboard)")
