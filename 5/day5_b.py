@@ -22,7 +22,7 @@ for start, end in ranges:
 
 answer = 0
 for start, end in merged_ranges:
-    count = end - start + 1
+    count = end - start + 1 
     answer += count
     print(f"Range {start}-{end}: {count} IDs")
 
