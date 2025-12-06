@@ -8,9 +8,9 @@ with open("input") as f:
     op_count = len(lines[0].split())
     nums = [["" for i in range(len(lines)) ] for i in range(op_count)]
     answers = [0] * op_count
-    
     curr = 0
     num_col = 0
+    
     for col in range(len(lines[0])):
         next_num = True
         for row, line in enumerate(lines[:-1]):
@@ -23,7 +23,6 @@ with open("input") as f:
             num_col = 0
         else:
             num_col += 1
-    print(nums)
     
     for i, operation in enumerate(lines[-1].split()):
         if operation == "*":
